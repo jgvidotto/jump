@@ -156,6 +156,7 @@ namespace InfiniteHopper
 
         public delegate void SaveScene(SceneData scene);
         public event SaveScene OnSceneSave;
+        public GameObject continueBtn;
 
         bool createLoadedColumn;
         private int currentColumn;
@@ -639,7 +640,7 @@ namespace InfiniteHopper
 				
 				//Show the game over screen
 				gameOverCanvas.gameObject.SetActive(true);
-				
+
 				//Write the score text
 				gameOverCanvas.Find("TextScore").GetComponent<Text>().text = "SCORE " + score.ToString();
 
@@ -737,7 +738,6 @@ namespace InfiniteHopper
 		{
         	if ( continues > 0 )
         	{
-                // Reset the player to its last position
                 var lastPosition = new Vector3(lastLandedObject.position.x, 1, lastLandedObject.position.z);
         		playerObjects[currentPlayer].position = lastPosition;
 
@@ -759,17 +759,17 @@ namespace InfiniteHopper
 		// This function changes the number of continues we have
 		public void ChangeContinues()
 		{
-
+			if (lastLandedObject == null) return;
 			// Limit the minimum number of continues to 0
 			if ( continues > 0 ) 
 			{
                 // Activate the continues object if we have no more continues
-                if ( gameOverCanvas )    gameOverCanvas.Find("ButtonContinue").gameObject.SetActive(true);
+                if ( gameOverCanvas )    continueBtn.SetActive(true);
 			}
 			else
 			{
                 // Deactivate the continues object if we have no more continues
-                if ( gameOverCanvas )    gameOverCanvas.Find("ButtonContinue").gameObject.SetActive(false);
+                if ( gameOverCanvas ) continueBtn.SetActive(false);
 			}
 		}
 		

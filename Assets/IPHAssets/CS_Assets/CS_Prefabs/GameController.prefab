@@ -119,7 +119,7 @@ MonoBehaviour:
   pauseCanvas: {fileID: 0}
   gameOverCanvas: {fileID: 0}
   bonusCanvas: {fileID: 0}
-  mainMenuLevelName: StartMenu
+  mainMenuLevelName: CS_StartMenu
   soundLevelUp: {fileID: 0}
   soundGameOver: {fileID: 8300000, guid: bde4f8b13a10e0a408c931868aaa7675, type: 3}
   soundSourceTag: GameController
@@ -128,6 +128,7 @@ MonoBehaviour:
   vectorsColumn: []
   vectorsItens: []
   playerStats: {fileID: 0}
+  continueBtn: {fileID: 0}
 --- !u!82 &8211542
 AudioSource:
   m_ObjectHideFlags: 0
@@ -248,4 +249,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb56e6d337b8480a86d2de01aa6c725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 11403226}
   soundAchievement: {fileID: 8300000, guid: cb13b656a74e149caa4128b80d820ca4, type: 3}

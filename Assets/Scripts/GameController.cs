@@ -4,14 +4,15 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour
 {
-    IPHGameController gameController;
+    [SerializeField]
+    private IPHGameController gameController;
     PlayerStats playerStats;
-    public AudioClip soundAchievement;
+    [SerializeField]
+    private AudioClip soundAchievement;
     
 
     void Awake()
     {
-        gameController = GameObject.FindWithTag("GameController").GetComponent<IPHGameController>();
         playerStats = gameController.playerStats;
     }
 
